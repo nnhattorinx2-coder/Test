@@ -15,8 +15,7 @@
     .wrap{width:100%;max-width:920px;background:linear-gradient(180deg,rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.7);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.04);}
     .row{display:flex;gap:24px;align-items:center}
     .avatar{width:200px;height:200px;border-radius:20px;flex:none;background:linear-gradient(135deg,#ffe29f,#ff7eb6);display:grid;place-items:center;position:relative;overflow:hidden}
-    /* playful SVG character */
-    .avatar svg{width:170px;height:170px;filter:drop-shadow(0 8px 20px rgba(0,0,0,0.45))}
+    .avatar img{width:100%;height:100%;object-fit:cover;border-radius:20px}
     .card{flex:1}
     h1{margin:0;font-size:28px}
     .handle{margin-top:6px;color:var(--accent);font-weight:700}
@@ -40,38 +39,25 @@
     /* confetti */
     .confetti{position:absolute;inset:0;pointer-events:none}
     .confetti i{position:absolute;width:8px;height:16px;border-radius:2px;opacity:.95;transform-origin:center;animation:fall 3s linear infinite}
-    @keyframes fall{0%{transform:translateY(-40vh) rotate(0) }100%{transform:translateY(120vh) rotate(360deg)}}
+    @keyframes fall{0%{transform:translateY(-40vh) rotate(0)}100%{transform:translateY(120vh) rotate(360deg)}}
 
     footer{margin-top:18px;color:var(--muted);font-size:13px}
 
     /* responsive */
-    @media (max-width:760px){.row{flex-direction:column}.avatar{width:160px;height:160px}.card{width:100%}}
+    @media (max-width:760px){
+      .row{flex-direction:column}
+      .avatar{width:160px;height:160px}
+      .card{width:100%}
+    }
   </style>
 </head>
 <body>
   <div class="wrap">
     <div class="row">
+      
+      <!-- Avatar thay bằng hình zalo.jpg -->
       <div class="avatar">
-        <!-- Playful cartoon avatar (SVG) -->
-        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avata vui nhộn">
-          <defs>
-            <linearGradient id="g1" x1="0" x2="1">
-              <stop offset="0" stop-color="#fff" stop-opacity=".9"/>
-              <stop offset="1" stop-color="#ffd47a" stop-opacity=".95"/>
-            </linearGradient>
-          </defs>
-          <rect x="6" y="20" width="108" height="84" rx="14" fill="#fff" opacity="0.06"/>
-          <circle cx="60" cy="48" r="20" fill="#fff" opacity="0.12"/>
-          <g transform="translate(0,6)">
-            <ellipse cx="60" cy="76" rx="36" ry="18" fill="#ffffff22"/>
-            <circle cx="44" cy="44" r="6" fill="#00101a"/>
-            <circle cx="76" cy="44" r="6" fill="#00101a"/>
-            <path d="M44 58 Q60 70 76 58" stroke="#001a26" stroke-width="2" fill="none" stroke-linecap="round"/>
-            <!-- cheerful wink mark -->
-            <path d="M44 44 q-6 -6 0 -12" stroke="#001a26" stroke-width="2" fill="none" opacity="0.05"/>
-            <circle cx="60" cy="28" r="8" fill="url(#g1)" opacity="0.8"/>
-          </g>
-        </svg>
+        <img src="zalo.jpg" alt="Ảnh đại diện Zalo" />
         <div class="floaters">
           <div class="wind" aria-hidden>
             <span>~ ~</span>
@@ -79,7 +65,6 @@
             <span style="animation-delay:1s">~</span>
           </div>
           <div class="confetti" aria-hidden>
-            <!-- lightweight confetti pieces -->
             <i style="left:10%;top:0;background:#ffcc00;animation-delay:0s"></i>
             <i style="left:30%;top:-40px;background:#ff7eb6;animation-delay:.2s"></i>
             <i style="left:50%;top:-60px;background:#66d9e8;animation-delay:.4s"></i>
@@ -101,14 +86,12 @@
 
         <div class="bio">
           <p>📝 Một đoạn tự giới thiệu chân thành —</p>
-          <p> Mình tin rằng một nụ cười nhỏ có thể làm sáng cả ngày. Khi rảnh mình vẽ vời, chụp ảnh, và viết mấy dòng lạc quan. Mình luôn sẵn sàng giúp đỡ bạn bè, trao đổi ý tưởng sáng tạo và cùng làm cho thế giới quanh ta vui hơn chút nữa.</p>
+          <p>Mình tin rằng một nụ cười nhỏ có thể làm sáng cả ngày. Khi rảnh mình vẽ vời, chụp ảnh, và viết mấy dòng lạc quan. Mình luôn sẵn sàng giúp đỡ bạn bè, trao đổi ý tưởng sáng tạo và cùng làm cho thế giới quanh ta vui hơn chút nữa.</p>
           <p>🎯 Mục tiêu: Tạo ra nội dung nhỏ nhưng có ý nghĩa — khiến người xem mỉm cười hoặc suy ngẫm.</p>
         </div>
 
         <div class="contact">
-          <!-- User-provided links -->
           <a class="btn fb" href="https://www.facebook.com/share/17Gvgmu24A/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <!-- small fb icon -->
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
               <path d="M15 3h3v4h-3c-1.1 0-2 .9-2 2v3h5v4h-5v7h-4v-7H6v-4h5v-3c0-2.76 2.24-5 5-5z" fill="#fff" opacity="0.95"/>
             </svg>
