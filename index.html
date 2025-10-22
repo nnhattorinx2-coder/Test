@@ -3,127 +3,103 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Giới thiệu - Trang cá nhân</title>
+  <title>Profile - Trang cá nhân</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg:#0f1724; --card:#0b1220; --accent:#ffcc00; --muted:#9aa4b2;
-      --glass: rgba(255,255,255,0.04);
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      /* Water element (mạng Thủy) palette */
+      --bg-1: #081526;    /* deep navy */
+      --bg-2: #04263b;    /* ocean deep */
+      --accent: #2fe3ff;  /* aqua */
+      --accent-2: #60d0ff;/* lighter aqua */
+      --glass: rgba(255,255,255,0.06);
+      --muted: rgba(255,255,255,0.7);
+      --card: rgba(255,255,255,0.04);
+      --glass-border: rgba(255,255,255,0.06);
+      --radius: 16px;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
     }
+
     *{box-sizing:border-box}
-    body{margin:0;min-height:100vh;background:linear-gradient(180deg,#071426 0%, #0b1530 70%);color:#e6eef8;display:flex;align-items:center;justify-content:center;padding:32px}
-    .wrap{width:100%;max-width:920px;background:linear-gradient(180deg,rgba(255,255,255,0.03), rgba(255,255,255,0.02));border-radius:18px;padding:28px;box-shadow:0 10px 30px rgba(2,6,23,0.7);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,0.04);}
-    .row{display:flex;gap:24px;align-items:center}
-    .avatar{width:200px;height:200px;border-radius:20px;flex:none;background:linear-gradient(135deg,#ffe29f,#ff7eb6);display:grid;place-items:center;position:relative;overflow:hidden}
-    .avatar img{width:100%;height:100%;object-fit:cover;border-radius:20px}
-    .card{flex:1}
-    h1{margin:0;font-size:28px}
-    .handle{margin-top:6px;color:var(--accent);font-weight:700}
-    p.lead{margin:12px 0 18px;color:var(--muted);line-height:1.5}
-    .badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
-    .badge{background:var(--glass);padding:8px 12px;border-radius:999px;font-weight:600;color:#fff;font-size:13px;border:1px solid rgba(255,255,255,0.03)}
-    .bio{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:12px;color:#dfe9f6}
-    .bio p{margin:8px 0}
-    .contact{display:flex;gap:12px;margin-top:14px}
-    .btn{display:inline-flex;gap:10px;align-items:center;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:700;border:1px solid rgba(255,255,255,0.06)}
-    .btn.fb{background:linear-gradient(90deg,#3b5998,#35508a)}
-    .btn.zalo{background:linear-gradient(90deg,#1670f0,#0b63d6)}
-    .muted{color:var(--muted);font-size:13px;margin-top:10px}
-
-    /* small animated wind lines & floating elements */
-    .floaters{position:absolute;inset:0;pointer-events:none}
-    .wind{position:absolute;left:-10%;top:20%;font-size:18px;opacity:.25;transform:rotate(-18deg)}
-    .wind span{display:inline-block;animation:wind 3s linear infinite}
-    @keyframes wind{0%{transform:translateX(0)}100%{transform:translateX(280px)}}
-
-    /* confetti */
-    .confetti{position:absolute;inset:0;pointer-events:none}
-    .confetti i{position:absolute;width:8px;height:16px;border-radius:2px;opacity:.95;transform-origin:center;animation:fall 3s linear infinite}
-    @keyframes fall{0%{transform:translateY(-40vh) rotate(0)}100%{transform:translateY(120vh) rotate(360deg)}}
-
-    footer{margin-top:18px;color:var(--muted);font-size:13px}
-
-    /* responsive */
-    @media (max-width:760px){
-      .row{flex-direction:column}
-      .avatar{width:160px;height:160px}
-      .card{width:100%}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(96,208,255,0.08), transparent), linear-gradient(180deg,var(--bg-1), var(--bg-2));
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:40px;
+      overflow:hidden;
     }
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="row">
-      
-      <!-- Avatar thay bằng hình zalo.jpg -->
-      <div class="avatar">
-        <img src="zalo.jpg" alt="Ảnh đại diện Zalo" />
-        <div class="floaters">
-          <div class="wind" aria-hidden>
-            <span>~ ~</span>
-            <span style="animation-delay:.5s">~ ~</span>
-            <span style="animation-delay:1s">~</span>
-          </div>
-          <div class="confetti" aria-hidden>
-            <i style="left:10%;top:0;background:#ffcc00;animation-delay:0s"></i>
-            <i style="left:30%;top:-40px;background:#ff7eb6;animation-delay:.2s"></i>
-            <i style="left:50%;top:-60px;background:#66d9e8;animation-delay:.4s"></i>
-            <i style="left:72%;top:-20px;background:#8affb0;animation-delay:.6s"></i>
-          </div>
-        </div>
-      </div>
 
-      <div class="card">
-        <h1>Xin chào — Mình là một người bạn vui tính!</h1>
-        <div class="handle">Yêu cuộc sống • Thích sáng tạo • Hay cười</div>
-        <p class="lead">Xin chào mọi người! Mình là người thích pha trò, lưu giữ những khoảnh khắc đời thường bằng câu chữ và ảnh vui — đồng thời luôn sẵn sàng kết nối, học hỏi và cùng lan toả năng lượng tích cực.</p>
+    /* Subtle moving wave background */
+    .ocean{
+      position:fixed; inset:0; z-index:0; pointer-events:none; opacity:0.35;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900"><defs><linearGradient id="g" x1="0" x2="1"><stop offset="0" stop-color="%2300d5ff" stop-opacity="0.12"/><stop offset="1" stop-color="%23008bd4" stop-opacity="0.02"/></linearGradient></defs><path d="M0 200 C 200 100 400 300 800 200 C 1200 100 1400 300 1600 200 L1600 900 L0 900 Z" fill="url(%23g)"/></svg>');
+      transform:translateY(0);
+      animation: drift 18s linear infinite;
+      mix-blend-mode: screen;
+      filter: blur(14px);
+    }
+    @keyframes drift{0%{transform:translateX(-4%)}50%{transform:translateX(4%)}100%{transform:translateX(-4%)}}
 
-        <div class="badges">
-          <div class="badge">Thích: Nghệ thuật &amp; âm nhạc</div>
-          <div class="badge">Tính cách: Hài hước, ấm áp</div>
-          <div class="badge">Sở trường: Tạo nội dung, thiết kế đơn giản</div>
-        </div>
+    /* Soft floating bubbles */
+    .bubbles{position:fixed; inset:0; z-index:0; pointer-events:none;}
+    .bubble{position:absolute; border-radius:50%; background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), rgba(255,255,255,0.02)); box-shadow:0 6px 24px rgba(2,8,23,0.5); opacity:0.9;}
 
-        <div class="bio">
-          <p>📝 Một đoạn tự giới thiệu chân thành —</p>
-          <p>Mình tin rằng một nụ cười nhỏ có thể làm sáng cả ngày. Khi rảnh mình vẽ vời, chụp ảnh, và viết mấy dòng lạc quan. Mình luôn sẵn sàng giúp đỡ bạn bè, trao đổi ý tưởng sáng tạo và cùng làm cho thế giới quanh ta vui hơn chút nữa.</p>
-          <p>🎯 Mục tiêu: Tạo ra nội dung nhỏ nhưng có ý nghĩa — khiến người xem mỉm cười hoặc suy ngẫm.</p>
-        </div>
+    /* Profile card */
+    .card{
+      position:relative;
+      z-index:1;
+      width:min(920px,96%);
+      max-width:980px;
+      display:grid;
+      grid-template-columns:270px 1fr;
+      gap:28px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:28px;
+      box-shadow: 0 10px 40px rgba(2,8,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+      border:1px solid var(--glass-border);
+      align-items:center;
+      backdrop-filter: blur(8px) saturate(1.05);
+    }
 
-        <div class="contact">
-          <a class="btn fb" href="https://www.facebook.com/share/17Gvgmu24A/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M15 3h3v4h-3c-1.1 0-2 .9-2 2v3h5v4h-5v7h-4v-7H6v-4h5v-3c0-2.76 2.24-5 5-5z" fill="#fff" opacity="0.95"/>
-            </svg>
-            <span>Facebook</span>
-          </a>
+    .avatar-wrap{display:flex;align-items:center;flex-direction:column;gap:16px}
+    .avatar{
+      width:200px; height:200px; border-radius:22px; overflow:hidden; flex-shrink:0;
+      border:3px solid rgba(255,255,255,0.06);
+      background:linear-gradient(135deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      box-shadow: 0 8px 30px rgba(2,8,23,0.5);
+    }
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
 
-          <a class="btn zalo" href="https://zalo.me/0704107623" target="_blank" rel="noopener noreferrer" aria-label="Zalo">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-              <path d="M12 2C6.48 2 2 5.58 2 10c0 2.18 1.14 4.18 3 5.64V22l4.09-2.26C11.05 20.7 11.52 20.75 12 20.75c5.52 0 10-3.58 10-8S17.52 2 12 2z" fill="#fff" opacity="0.95"/>
-            </svg>
-            <span>Zalo (0704 107 623)</span>
-          </a>
-        </div>
+    .water-ring{position:relative;width:220px;height:220px;border-radius:50%; display:grid;place-items:center;}
+    .ring{position:absolute;inset:0;border-radius:50%;box-shadow:0 0 40px rgba(47,227,255,0.12);border:1px solid rgba(47,227,255,0.08); animation: pulse 3.6s ease-in-out infinite}
+    .ring.r2{transform:scale(1.15);animation-duration:5.6s}
+    .ring.r3{transform:scale(1.32);animation-duration:7.2s}
+    @keyframes pulse{0%{transform:scale(0.98);opacity:0.9}50%{transform:scale(1.06);opacity:0.6}100%{transform:scale(0.98);opacity:0.9}}
 
-        <div class="muted">Bạn có thể chia sẻ trang này hoặc chỉnh sửa phần chữ để phù hợp hơn với mục đích: công việc, bạn bè, hay hẹn hò.</div>
+    .info{padding:6px 0}
+    h1{margin:0;font-size:22px;color:var(--accent-2);font-weight:700}
+    .subtitle{font-size:13px;color:var(--muted);margin-top:6px}
 
-        <footer>Muốn thay avatar thật? Gửi ảnh và mình sẽ giúp gợi ý phiên bản hoạt hình hoặc chibi cho bạn.</footer>
-      </div>
-    </div>
-  </div>
+    .bio{margin-top:12px;color:rgba(255,255,255,0.85);line-height:1.5}
 
-  <script>
-    // sprinkle some tiny random confetti animation offsets
-    (function(){
-      const pieces = document.querySelectorAll('.confetti i');
-      pieces.forEach((el,i)=>{
-        el.style.top = (Math.random()*-120|0)+'px';
-        el.style.left = (10 + Math.random()*80|0)+'%';
-        el.style.animationDuration = (2.4 + Math.random()*1.6).toFixed(2)+'s';
-        el.style.animationDelay = (Math.random()*1.2).toFixed(2)+'s';
-      });
-    })();
-  </script>
-</body>
-</html>
+    .meta{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+    .meta a{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));text-decoration:none;color:var(--muted);border:1px solid rgba(255,255,255,0.03);font-weight:600}
+    .meta a .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 4px 16px rgba(47,227,255,0.12)}
+
+    /* Right column */
+    .right{padding:8px 6px}
+    .card-row{display:flex;gap:12px;align-items:center}
+    .stats{display:flex;gap:10px}
+    .stat{background:var(--card);padding:10px 14px;border-radius:10px;min-width:120px;text-align:center}
+    .stat h3{margin:0;color:var(--accent-2)}
+    .stat p{margin:6px 0 0;font-size:13px;color:var(--muted)}
+
+    /* F
