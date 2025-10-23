@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LNX Robotics — AI Automation Systems</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+    :root {
+      --primary: #00d4ff;
+      --bg-dark: #020817;
+      --bg-card: #0b1224;
+      --text-light: #dce3f0;
+      --text-muted: #94a3b8;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+
+    body {
+      background: var(--bg-dark);
+      color: var(--text-light);
+      overflow-x: hidden;
+      line-height: 1.5;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      padding: 120px 20px 80px;
+      background: linear-gradient(180deg, #031128, #020817 80%);
+    }
+
+    header h1 {
+      font-size: 5rem;
+      font-weight: 800;
+      background: linear-gradient(90deg, #00d4ff, #00ffa1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    header h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--text-light);
+      opacity: 0.9;
+    }
+
+    header p {
+      margin-top: 20px;
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    /* ===== MAIN SECTION ===== */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      padding: 60px 10%;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+
+    .left {
+      flex: 1;
+      min-width: 350px;
+    }
+
+    .left h3 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--white);
+    }
+
+    .btn-group {
+      margin: 25px 0;
+    }
+
+    .btn {
+      background: var(--primary);
+      border: none;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-weight: 700;
+      color: #00121a;
+      cursor: pointer;
+      margin-right: 10px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: 16px;
+      padding: 20px;
+      margin-top: 18px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
+    }
+
+    .card h4 {
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+      color: var(--primary);
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .testimonial {
+      margin-top: 30px;
+      background: rgba(0, 212, 255, 0.1);
+      padding: 20px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .testimonial-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #00d4ff, #00ffa1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #00121a;
+      font-size: 1.2rem;
+    }
+
+    /* ===== RIGHT PANEL ===== */
+    .right {
+      flex: 1;
+      background: var(--bg-card);
+      border-radius: 20px;
+      padding: 40px;
+      min-width: 350px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .right h3 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .right p {
+      color: var(--text-light);
+      margin-bottom: 20px;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #102040;
+      padding: 6px 14px;
+      border-radius: 8px;
+      margin: 6px 4px 0 0;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+
+    /* ===== LOGO SECTION WITH ANIMATION ===== */
+    .logo-section {
+      background: var(--white);
+      color: #000;
+      text-align: center;
+      padding: 100px 10%;
+    }
+
+    .logo-section h2 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .logo-section p {
+      font-size: 1.15rem;
+      color: #444;
+      max-width: 650px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+
+    .logo-marquee {
+      overflow: hidden;
+      position: relative;
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    .logo-track {
+      display: flex;
+      width: calc(200%); /* để lặp */
+      animation: scroll 20s linear infinite;
+    }
+
+    .logo-card {
+      flex: 0 0 auto;
+      background: #f3f4f6;
+      border-radius: 12px;
+      padding: 25px;
+      margin-right: 30px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s;
+    }
+
+    .logo-card img {
+      max-width: 120px;
+      filter: grayscale(100%);
+      opacity: 0.8;
+      transition: filter 0.3s, transform 0.3s, opacity 0.3s;
+    }
+
+    .logo-card:hover img {
+      filter: grayscale(0%);
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }  
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #010510;
+      color: var(--text-muted);
+      text-align: center;
+      padding: 30px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 3.2rem; }
+      header h2 { font-size: 1.3rem; }
+      .container { padding: 40px 5%; flex-direction: column; }
+      .left, .right { min-width: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>LNX Robotics</h1>
+    <h2>AI & Automation Solutions</h2>
+    <p>Empowering businesses through intelligent automation, precision AI, and modern technology integration.</p>
+  </header>
+
+  <!-- MAIN CONTENT -->
+  <div class="container">
+    <div class="left">
+      <h3>Trình dựng AI & tự động hóa dành cho doanh nghiệp của bạn</h3>
+      <div class="btn-group">
+        <button class="btn">Thử trình dựng</button>
+        <button class="btn">Xem demo</button>
+      </div>
+
+      <div class="card">
+        <h4>Trình kéo-thả</h4>
+        <p>Kéo thả block, xem live preview ngay lập tức.</p>
+      </div>
+
+      <div class="card">
+        <h4>Tùy biến AI</h4>
+        <p>Sinh nội dung, tối ưu SEO, và gợi ý thông minh bằng AI.</p>
+      </div>
+
+      <div class="card">
+        <h4>Hosting & SSL</h4>
+        <p>Xuất bản nhanh với SSL miễn phí.</p>
+      </div>
+
+      <div class="card">
+        <h4>Starter</h4>
+        <p class="price">$0 / tháng</p>
+        <p>Tạo 1 site, giới hạn templates</p>
+      </div>
+
+      <div class="card">
+        <h4>Pro</h4>
+        <p class="price">$15 / tháng</p>
+        <p>Nhiều template, domain, AI tools</p>
+      </div>
+
+      <div class="card">
+        <h4>Business</h4>
+        <p class="price">$49 / tháng</p>
+        <p>Tùy chỉnh nâng cao & SLA</p>
+      </div>
+
+      <div class="testimonial">
+        <div class="testimonial-avatar">NL</div>
+        <div>
+          <strong>Nhat Linh — CTO</strong>
+          <p>“Dễ dùng, chỉnh sửa nhanh — tiết kiệm thời gian cho đội dev.”</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="right">
+      <h3>Your AI · Your Automation</h3>
+      <p>Mẫu live preview — chỉnh title & subtitle bên dưới để thấy thay đổi ngay.</p>
+      <div class="tag">Automation</div>
+      <div class="tag">E-commerce</div>
+      <div class="tag">Portfolio</div>
+    </div>
+  </div>
+
+  <!-- LOGO SECTION WITH SCROLLING -->
+  <section class="logo-section">
+    <h2>Streamline Coding with AI Precision</h2>
+    <p>Trusted by leading businesses across Vietnam, our AI-integrated solutions streamline operations and enhance productivity, ensuring reliability and innovation for every client.</p>
+
+    <div class="logo-marquee">
+      <div class="logo-track">
+        <div class="logo-card"><img src="https://dummyimage.com/120x40/000/fff&text=LOGO1" alt="Logo 1"></div>
+        <div class="logo-card"><img src="https://dummyimage-of-logo2.png" alt="Logo 2"></div>
+        <div class="logo-card"><img src="https://dummyimage.com/120x40/000/fff&text=LOGO3" alt="Logo 3"></div>
+        <div class="logo-card"><img src="https://dummyimage.com/120x40/000/fff&text=LOGO4" alt="Logo 4"></div>
+        <div class="logo-card"><img src="https://dummyimage.com/120x40/000/fff&text=LOGO5" alt="Logo 5"></div>
+        <div class="logo-card"><img src="https://dummyimage.com/120x40/000/fff&text=LOGO6" alt="Logo 6"></div>
+        <!-- Lặp lại các logo để tạo hiệu ứng liên tục -->
+        <div class="logo-card"><img src="https://dummyimage-of-logo2.png" alt="Logo 2"></div>
+        <div class="logo-card"><img src="https://dummyimage.com/120x40/000/fff&text=LOGO3" alt="Logo 3"></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 LNX Robotics. Thiết kế bởi Nhat Linh — CTO.
+  </footer>
+
+</body>
+</html>
