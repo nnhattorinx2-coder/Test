@@ -1,0 +1,318 @@
+<!-- ========== KHÁM PHÁ GIẢI PHÁP (SOLUTION EXPLORER) ========== -->
+<section id="solutions" style="padding:80px 10%; position:relative; overflow:hidden;">
+  <!-- ánh sáng nền nhẹ -->
+  <div style="position:absolute; inset:-20% -10% auto; height:420px; 
+              background:radial-gradient(650px 240px at 15% 20%, rgba(0,212,255,.12), transparent 60%),
+                         radial-gradient(700px 260px at 85% 10%, rgba(0,255,161,.10), transparent 60%); 
+              filter:blur(40px); pointer-events:none;"></div>
+
+  <div style="text-align:center; margin-bottom:28px;">
+    <span style="display:inline-block; padding:6px 14px; border-radius:999px;
+                 background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08);
+                 color:var(--primary); font-weight:700; letter-spacing:.12em; font-size:.82rem;">
+      EXPLORE SOLUTIONS
+    </span>
+    <h2 style="margin:14px 0 12px; font-size:2.4rem; font-weight:800;
+               background:linear-gradient(90deg,var(--primary),var(--accent));
+               -webkit-background-clip:text; -webkit-text-fill-color:transparent;">
+      Khám phá giải pháp AI của LNX Robotics
+    </h2>
+    <p style="color:var(--text-muted); max-width:820px; margin:0 auto;">
+      Chọn danh mục để xem các gói giải pháp. Di chuột vào thẻ để “nghiêng 3D”, bấm để xem chi tiết.
+    </p>
+  </div>
+
+  <!-- Bộ lọc danh mục -->
+  <div class="sol-filters" style="display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin:22px 0 28px;">
+    <button class="sol-chip is-active" data-filter="all">Tất cả</button>
+    <button class="sol-chip" data-filter="automation">Automation</button>
+    <button class="sol-chip" data-filter="data">Data Intelligence</button>
+    <button class="sol-chip" data-filter="robotics">Robotics</button>
+    <button class="sol-chip" data-filter="integration">Integration</button>
+  </div>
+
+  <!-- Lưới thẻ giải pháp -->
+  <div class="sol-grid">
+    <!-- CARD 1 -->
+    <article class="sol-card" data-cat="automation" data-id="auto-flow">
+      <div class="sol-head">
+        <div class="sol-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h12M4 17h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>AutoFlow Orchestrator</h3>
+        <p>Tự động hóa quy trình end-to-end với trigger, rules và human-in-the-loop.</p>
+      </div>
+      <ul class="sol-bullets">
+        <li>Workflow builder kéo-thả</li>
+        <li>RPA + API hub</li>
+        <li>Giám sát & cảnh báo realtime</li>
+      </ul>
+      <div class="sol-cta"><span class="badge">Automation</span><button class="sol-more">Xem chi tiết</button></div>
+    </article>
+
+    <!-- CARD 2 -->
+    <article class="sol-card" data-cat="data" data-id="insight-hub">
+      <div class="sol-head">
+        <div class="sol-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 18V6l8-2 8 2v12l-8 2-8-2Z" stroke="currentColor" stroke-width="2"/><path d="M8 12h8M8 9h8M8 15h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>InsightHub Analytics</h3>
+        <p>Phân tích dữ liệu bằng AI: KPI realtime, dự báo và cảnh báo bất thường.</p>
+      </div>
+      <ul class="sol-bullets">
+        <li>Dashboard động</li>
+        <li>Time-series forecast</li>
+        <li>Alert thông minh</li>
+      </ul>
+      <div class="sol-cta"><span class="badge">Data</span><button class="sol-more">Xem chi tiết</button></div>
+    </article>
+
+    <!-- CARD 3 -->
+    <article class="sol-card" data-cat="robotics" data-id="vision-qc">
+      <div class="sol-head">
+        <div class="sol-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="2"/><path d="M3 12s3-6 9-6 9 6 9 6-3 6-9 6-9-6-9-6Z" stroke="currentColor" stroke-width="2"/></svg>
+        </div>
+        <h3>VisionQC Robot</h3>
+        <p>Robot + thị giác máy tính kiểm định chất lượng sản phẩm theo thời gian thực.</p>
+      </div>
+      <ul class="sol-bullets">
+        <li>Defect detection 99.1%</li>
+        <li>Tracking trên băng chuyền</li>
+        <li>Tích hợp PLC/SCADA</li>
+      </ul>
+      <div class="sol-cta"><span class="badge">Robotics</span><button class="sol-more">Xem chi tiết</button></div>
+    </article>
+
+    <!-- CARD 4 -->
+    <article class="sol-card" data-cat="integration" data-id="chat-rag">
+      <div class="sol-head">
+        <div class="sol-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v10H7l-3 4V5Z" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="10" r="1.5" fill="currentColor"/><circle cx="14" cy="10" r="1.5" fill="currentColor"/></svg>
+        </div>
+        <h3>ChatRAG Assistant</h3>
+        <p>Trợ lý AI nội bộ, truy cập tài liệu công ty (RAG) kèm phân quyền & ghi log.</p>
+      </div>
+      <ul class="sol-bullets">
+        <li>Tìm hiểu theo ngữ cảnh</li>
+        <li>Plugins: Gmail, Drive, Jira…</li>
+        <li>Triển khai on-prem/Cloud</li>
+      </ul>
+      <div class="sol-cta"><span class="badge">Integration</span><button class="sol-more">Xem chi tiết</button></div>
+    </article>
+
+    <!-- CARD 5 -->
+    <article class="sol-card" data-cat="automation" data-id="agentops">
+      <div class="sol-head">
+        <div class="sol-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>AgentOps Studio</h3>
+        <p>Thiết kế agent đa nhiệm: đọc mail, điền form, gọi API và tự học từ feedback.</p>
+      </div>
+      <ul class="sol-bullets">
+        <li>Evaluation sandbox</li>
+        <li>Guardrails & audit</li>
+        <li>Cost monitor</li>
+      </ul>
+      <div class="sol-cta"><span class="badge">Automation</span><button class="sol-more">Xem chi tiết</button></div>
+    </article>
+
+    <!-- CARD 6 -->
+    <article class="sol-card" data-cat="data" data-id="dataprep">
+      <div class="sol-head">
+        <div class="sol-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 9h10M7 13h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </div>
+        <h3>DataPrep Forge</h3>
+        <p>Làm sạch, chuẩn hoá & vector hoá dữ liệu cho mô hình AI và RAG pipeline.</p>
+      </div>
+      <ul class="sol-bullets">
+        <li>ETL + deduplicate</li>
+        <li>Embedding store</li>
+        <li>PII redaction</li>
+      </ul>
+      <div class="sol-cta"><span class="badge">Data</span><button class="sol-more">Xem chi tiết</button></div>
+    </article>
+  </div>
+
+  <!-- CTA lớn -->
+  <div style="text-align:center; margin-top:34px;">
+    <a href="#contact" class="sol-cta-big">Nhận tư vấn giải pháp miễn phí</a>
+  </div>
+</section>
+
+<!-- ====== STYLE cho Solution Explorer ====== -->
+<style>
+  #solutions .sol-chip{
+    background:rgba(255,255,255,.06);
+    color:var(--text-light);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:999px;
+    padding:10px 16px; font-weight:700; cursor:pointer;
+    transition:.25s; backdrop-filter: blur(4px);
+  }
+  #solutions .sol-chip:hover{ transform:translateY(-2px); border-color: rgba(0,212,255,.35); box-shadow:0 0 16px rgba(0,212,255,.15);}
+  #solutions .sol-chip.is-active{ background:linear-gradient(90deg,var(--primary),var(--accent)); color:#061219; border:none; box-shadow:0 0 22px rgba(0,212,255,.35); }
+
+  #solutions .sol-grid{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:18px;
+  }
+  @media (max-width:1000px){ #solutions .sol-grid{ grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:640px){  #solutions .sol-grid{ grid-template-columns:1fr;} }
+
+  #solutions .sol-card{
+    position:relative; background:var(--bg-card); border:1px solid rgba(255,255,255,.08);
+    border-radius:16px; padding:20px; min-height:260px; overflow:hidden; transform-style:preserve-3d;
+    transition: transform .2s ease, box-shadow .3s ease, border-color .3s ease;
+  }
+  #solutions .sol-card:before{
+    content:""; position:absolute; inset:-2px; border-radius:18px; pointer-events:none;
+    background:conic-gradient(from 0deg, rgba(0,212,255,.25), rgba(0,255,161,.18), transparent 30%, transparent 70%, rgba(0,212,255,.25));
+    filter:blur(16px); opacity:.25; transition:opacity .4s ease;
+  }
+  #solutions .sol-card:hover{ box-shadow:0 20px 60px rgba(0,0,0,.45), 0 0 32px rgba(0,212,255,.12); border-color: rgba(0,212,255,.35);}
+  #solutions .sol-card:hover:before{ opacity:.45; }
+
+  #solutions .sol-head{ margin-bottom:10px; }
+  #solutions .sol-icon{
+    width:42px; height:42px; display:grid; place-items:center; color:var(--primary);
+    background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.08); border-radius:12px; margin-bottom:10px;
+  }
+  #solutions .sol-head h3{ margin:0 0 6px; font-size:1.15rem; }
+  #solutions .sol-head p{ color:var(--text-muted); margin:0; }
+
+  #solutions .sol-bullets{ list-style:none; margin:14px 0 16px; padding:0; color:#cfe7ff;}
+  #solutions .sol-bullets li{ margin:6px 0; position:relative; padding-left:20px; }
+  #solutions .sol-bullets li:before{
+    content:""; position:absolute; left:0; top:.58em; width:10px; height:10px; border-radius:50%;
+    background:linear-gradient(90deg,var(--primary),var(--accent));
+    box-shadow:0 0 10px rgba(0,212,255,.5);
+  }
+
+  #solutions .badge{
+    display:inline-block; font-weight:800; color:#06202a; font-size:.75rem;
+    background:linear-gradient(90deg,var(--primary),var(--accent)); padding:6px 10px; border-radius:999px;
+  }
+  #solutions .sol-cta{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
+  #solutions .sol-more{
+    background:transparent; color:var(--text-light); border:1px solid rgba(255,255,255,.12);
+    padding:10px 14px; border-radius:10px; font-weight:700; cursor:pointer; transition:.25s;
+  }
+  #solutions .sol-more:hover{ border-color: rgba(0,212,255,.4); box-shadow:0 0 16px rgba(0,212,255,.16); transform:translateY(-2px); }
+
+  #solutions .sol-cta-big{
+    display:inline-block; background:linear-gradient(90deg,var(--primary),var(--accent)); color:#061219;
+    padding:14px 22px; border-radius:12px; font-weight:800; box-shadow:0 0 24px rgba(0,212,255,.35);
+    text-decoration:none;
+  }
+</style>
+
+<!-- ====== SCRIPT: filter + tilt 3D + modal ====== -->
+<script>
+(function(){
+  // ---- Filter
+  const chips = document.querySelectorAll('#solutions .sol-chip');
+  const cards = document.querySelectorAll('#solutions .sol-card');
+  chips.forEach(chip=>{
+    chip.addEventListener('click', ()=>{
+      chips.forEach(c=>c.classList.remove('is-active'));
+      chip.classList.add('is-active');
+      const f = chip.dataset.filter;
+      cards.forEach(card=>{
+        const show = (f==='all') || card.dataset.cat===f;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+
+  // ---- Tilt 3D
+  cards.forEach(card=>{
+    const damp = 12; // độ nghiêng
+    let resetTimer;
+    card.addEventListener('mousemove', (e)=>{
+      const r = card.getBoundingClientRect();
+      const cx = e.clientX - r.left, cy = e.clientY - r.top;
+      const rx = ((cy / r.height) - 0.5) * -damp;
+      const ry = ((cx / r.width) - 0.5) *  damp;
+      card.style.transform = `perspective(800px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(0)`;
+      clearTimeout(resetTimer);
+    });
+    ['mouseleave','blur'].forEach(ev=>{
+      card.addEventListener(ev, ()=>{
+        resetTimer = setTimeout(()=>{ card.style.transform = 'perspective(800px) rotateX(0) rotateY(0)'; }, 120);
+      });
+    });
+  });
+
+  // ---- Reveal on scroll
+  const io = new IntersectionObserver(entries=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){ en.target.animate([{opacity:0, transform:'translateY(14px)'},{opacity:1, transform:'none'}], {duration:500, easing:'ease-out', fill:'forwards'}); io.unobserve(en.target); }
+    });
+  }, {threshold:.12});
+  cards.forEach(c=>io.observe(c));
+
+  // ---- Quick modal (chi tiết) – nội dung demo
+  const details = {
+    'auto-flow': {
+      title:'AutoFlow Orchestrator',
+      body:'Thiết kế workflow end-to-end, hỗ trợ human-in-the-loop, SLA & audit trail. Kết nối RPA, API, webhook, cron và event bus.'
+    },
+    'insight-hub': {
+      title:'InsightHub Analytics',
+      body:'BI realtime, dự báo theo series thời gian, cảnh báo bất thường. Kết nối DB/warehouse và đồng bộ dashboard.'
+    },
+    'vision-qc': {
+      title:'VisionQC Robot',
+      body:'Hệ thống camera + robot kẹp, phát hiện lỗi 99.1% mAP, phù hợp dây chuyền kiểm định tự động và thống kê lỗi.'
+    },
+    'chat-rag': {
+      title:'ChatRAG Assistant',
+      body:'Trợ lý AI truy cập tài liệu nội bộ (RAG), hỗ trợ phân quyền, logging, phê duyệt và triển khai on-prem/Cloud.'
+    },
+    'agentops': {
+      title:'AgentOps Studio',
+      body:'Thiết kế agent đa nhiệm, sandbox đánh giá, guardrails, theo dõi chi phí và tự học từ phản hồi người dùng.'
+    },
+    'dataprep': {
+      title:'DataPrep Forge',
+      body:'Pipeline ETL, làm sạch & ẩn PII, tạo embedding store sẵn sàng cho RAG/LMM; hỗ trợ batch & streaming.'
+    }
+  };
+
+  // tạo modal 1 lần
+  const modal = document.createElement('div');
+  modal.style.cssText = 'position:fixed;inset:0;display:none;place-items:center;background:rgba(0,0,0,.6);z-index:9999;';
+  modal.innerHTML = `
+    <div style="max-width:680px;width:calc(100% - 40px);background:#0b1224;border:1px solid rgba(255,255,255,.1);
+                border-radius:14px;padding:22px;box-shadow:0 20px 80px rgba(0,0,0,.6);">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:8px;">
+        <h3 id="solModalTitle" style="margin:0;background:linear-gradient(90deg,var(--primary),var(--accent));
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;"></h3>
+        <button id="solModalClose" style="background:transparent;border:1px solid rgba(255,255,255,.15);
+            color:#eaf4ff;border-radius:8px;padding:8px 10px;cursor:pointer;">Đóng</button>
+      </div>
+      <p id="solModalBody" style="color:#cfe1f7;margin:0 0 16px;"></p>
+      <a href="#contact" style="display:inline-block;margin-top:6px;background:linear-gradient(90deg,var(--primary),var(--accent));
+         color:#061219;padding:10px 14px;border-radius:10px;font-weight:800;text-decoration:none;">Nhận tư vấn triển khai</a>
+    </div>`;
+  document.body.appendChild(modal);
+  const close = ()=> modal.style.display='none';
+  modal.addEventListener('click', (e)=>{ if(e.target===modal) close(); });
+  modal.querySelector('#solModalClose').addEventListener('click', close);
+
+  // gán sự kiện mở modal
+  document.querySelectorAll('#solutions .sol-more').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const id = btn.closest('.sol-card').dataset.id;
+      const d = details[id];
+      if(!d) return;
+      modal.querySelector('#solModalTitle').textContent = d.title;
+      modal.querySelector('#solModalBody').textContent  = d.body;
+      modal.style.display = 'grid';
+    });
+  });
+})();
+</script>
+<!-- ========== HẾT KHỐI KHÁM PHÁ GIẢI PHÁP ========== -->
