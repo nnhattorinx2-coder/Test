@@ -1,25 +1,22 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LNX Robotics — AI Automation Systems</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LNX Robotics — AI Automation & Robotics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-
     :root {
       --primary: #00d4ff;
-      --bg-dark: #020817;
-      --bg-card: #0b1224;
-      --text-light: #dce3f0;
+      --accent: #00ffa1;
+      --bg-dark: #01060f;
+      --bg-card: #081120;
+      --text-light: #eaf4ff;
       --text-muted: #94a3b8;
-      --white: #ffffff;
     }
 
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
       font-family: "Inter", sans-serif;
     }
 
@@ -27,341 +24,312 @@
       background: var(--bg-dark);
       color: var(--text-light);
       overflow-x: hidden;
-      line-height: 1.5;
     }
 
-    /* ===== HEADER ===== */
+    /* Header */
     header {
-      text-align: center;
-      padding: 120px 20px 80px;
-      background: linear-gradient(180deg, #031128, #020817 80%);
-    }
-
-    header h1 {
-      font-size: 5rem;
-      font-weight: 800;
-      background: linear-gradient(90deg, #00d4ff, #00ffa1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-
-    header h2 {
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: var(--text-light);
-      opacity: 0.9;
-    }
-
-    header p {
-      margin-top: 20px;
-      color: var(--text-muted);
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      line-height: 1.6;
-    }
-
-    /* ===== MAIN SECTION ===== */
-    .container {
       display: flex;
       justify-content: space-between;
-      padding: 60px 10%;
-      gap: 40px;
-      flex-wrap: wrap;
+      align-items: center;
+      padding: 30px 8%;
+      background: rgba(0,0,0,0.4);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(10px);
+      z-index: 100;
     }
-
-    .left {
-      flex: 1;
-      min-width: 350px;
+    header h1 {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
-
-    .left h3 {
-      font-size: 1.6rem;
-      font-weight: 700;
-      margin-bottom: 20px;
-      color: var(--white);
+    header h1 span {
+      background: linear-gradient(90deg,var(--primary),var(--accent));
+      color:#000;
+      border-radius:6px;
+      padding:6px 10px;
+      font-weight:700;
     }
-
-    .btn-group {
-      margin: 25px 0;
-    }
-
-    .btn {
-      background: var(--primary);
-      border: none;
-      padding: 12px 22px;
+    header a {
+      text-decoration: none;
+      background: linear-gradient(90deg,var(--primary),var(--accent));
+      color: #000;
+      padding: 10px 20px;
       border-radius: 10px;
       font-weight: 700;
-      color: #00121a;
-      cursor: pointer;
-      margin-right: 10px;
-      transition: transform 0.3s, box-shadow 0.3s;
+      transition: all 0.3s;
+    }
+    header a:hover { transform: scale(1.05); box-shadow: 0 0 20px rgba(0,212,255,0.4); }
+
+    /* Hero Section */
+    .hero {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      padding:120px 10%;
+      background:linear-gradient(180deg,#01060f,#021020 90%);
+      overflow:hidden;
+    }
+    .hero-text {
+      flex:1;
+      min-width:360px;
+      z-index:2;
+    }
+    .hero-text span {
+      display:inline-block;
+      background:rgba(0,212,255,0.1);
+      border-radius:40px;
+      padding:6px 16px;
+      font-size:0.9rem;
+      font-weight:600;
+      color:var(--primary);
+      margin-bottom:18px;
+    }
+    .hero-text h1 {
+      font-size:3.8rem;
+      font-weight:800;
+      line-height:1.2;
+      background:linear-gradient(90deg,var(--primary),var(--accent));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom:20px;
+    }
+    .hero-text p {
+      max-width:540px;
+      font-size:1.1rem;
+      color:var(--text-muted);
+      line-height:1.7;
+    }
+    .hero-buttons {
+      margin-top:30px;
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+    .btn {
+      border:none;
+      padding:14px 28px;
+      border-radius:10px;
+      font-weight:700;
+      cursor:pointer;
+      transition:all .3s;
+    }
+    .btn-primary {
+      background:linear-gradient(90deg,var(--primary),var(--accent));
+      color:#00121a;
+      box-shadow:0 0 20px rgba(0,212,255,0.4);
+    }
+    .btn-outline {
+      background:var(--bg-card);
+      color:var(--text-light);
+      border:1px solid rgba(255,255,255,0.1);
+    }
+    .btn:hover { transform:scale(1.05); }
+
+    .hero-img {
+      flex:1;
+      min-width:360px;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      position:relative;
+      margin-top:40px;
+    }
+    .hero-img img {
+      width:100%;
+      max-width:480px;
+      border-radius:20px;
+      display:block;
+      filter:brightness(1.1) contrast(1.05);
+      box-shadow:0 0 40px rgba(0,212,255,0.25);
     }
 
-    .btn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0, 212, 255, 0.4);
+    /* Light Sweep effect */
+    .light-sweep {
+      position:absolute;
+      top:0;
+      left:-75%;
+      width:50%;
+      height:100%;
+      background:linear-gradient(120deg,rgba(0,212,255,0) 0%,rgba(0,212,255,0.25) 50%,rgba(0,212,255,0) 100%);
+      transform:skewX(-25deg);
+      animation:sweep 4s linear infinite;
+      pointer-events:none;
+    }
+    @keyframes sweep {
+      0%{left:-75%;}
+      100%{left:130%;}
     }
 
-    .card {
-      background: var(--bg-card);
-      border-radius: 16px;
-      padding: 20px;
-      margin-top: 18px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px rgba(0, 212, 255, 0.1);
-    }
-
-    .card h4 {
-      font-size: 1.1rem;
-      margin-bottom: 8px;
-      color: var(--primary);
-    }
-
-    .price {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--primary);
-    }
-
-    .testimonial {
-      margin-top: 30px;
-      background: rgba(0, 212, 255, 0.1);
-      padding: 20px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .testimonial-avatar {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: linear-gradient(45deg, #00d4ff, #00ffa1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      color: #00121a;
-      font-size: 1.2rem;
-    }
-
-    /* ===== RIGHT PANEL ===== */
-    .right {
-      flex: 1;
-      background: var(--bg-card);
-      border-radius: 20px;
-      padding: 40px;
-      min-width: 350px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
-    }
-
-    .right h3 {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--primary);
-      margin-bottom: 12px;
-    }
-
-    .right p {
-      color: var(--text-light);
-      margin-bottom: 20px;
-    }
-
-    .tag {
-      display: inline-block;
-      background: #102040;
-      padding: 6px 14px;
-      border-radius: 8px;
-      margin: 6px 4px 0 0;
-      font-size: 0.9rem;
-      color: var(--text-light);
-    }
-
-    /* ===== LOGO SECTION WITH ANIMATION ===== */
+    /* Logo Section */
     .logo-section {
-      background: var(--white);
-      color: #000;
-      text-align: center;
-      padding: 100px 10%;
+      background:#010510;
+      padding:100px 10%;
+      text-align:center;
     }
-
     .logo-section h2 {
-      font-size: 2.4rem;
-      font-weight: 800;
-      margin-bottom: 15px;
+      font-size:2.4rem;
+      font-weight:800;
+      background:linear-gradient(90deg,var(--primary),var(--accent));
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+      margin-bottom:20px;
     }
-
     .logo-section p {
-      font-size: 1.15rem;
-      color: #444;
-      max-width: 650px;
-      margin: 0 auto 40px;
-      line-height: 1.6;
+      color:var(--text-muted);
+      font-size:1.1rem;
+      max-width:700px;
+      margin:0 auto 50px;
+      line-height:1.6;
     }
-
-    .logo-marquee {
-      overflow: hidden;
-      position: relative;
-      width: 100%;
-      margin-top: 40px;
-    }
-
     .logo-track {
-      display: flex;
-      width: calc(200%); /* để lặp */
-      animation: scroll 20s linear infinite;
+      display:flex;
+      width:calc(200%);
+      animation:scroll-left 22s linear infinite;
     }
-
     .logo-card {
-      flex: 0 0 auto;
-      background: #f3f4f6;
-      border-radius: 12px;
-      padding: 25px;
-      margin-right: 30px;
-      height: 80px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.3s;
+      flex:0 0 auto;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:14px;
+      padding:25px;
+      margin-right:35px;
+      height:90px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      transition:transform .3s, box-shadow .3s;
     }
-
     .logo-card img {
-      max-width: 120px;
-      filter: grayscale(100%);
-      opacity: 0.8;
-      transition: filter 0.3s, transform 0.3s, opacity 0.3s;
+      max-width:140px;
+      filter:grayscale(100%) brightness(1.3);
+      opacity:0.8;
+      transition:all .3s;
     }
-
+    .logo-card:hover {
+      transform:translateY(-6px) scale(1.05);
+      box-shadow:0 0 25px rgba(0,212,255,0.2);
+    }
     .logo-card:hover img {
-      filter: grayscale(0%);
-      opacity: 1;
-      transform: scale(1.05);
+      filter:grayscale(0%) brightness(1.1);
+      opacity:1;
+    }
+    @keyframes scroll-left {
+      0% { transform:translateX(0); }
+      100% { transform:translateX(-50%); }
     }
 
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }  
-    }
-
-    /* ===== FOOTER ===== */
+    /* Contact Section */
     footer {
-      background: #010510;
-      color: var(--text-muted);
-      text-align: center;
-      padding: 30px;
-      font-size: 0.9rem;
+      background:#000814;
+      color:var(--text-light);
+      padding:60px 10%;
+    }
+    .contact-grid {
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:30px;
+      margin-bottom:40px;
+    }
+    .panel {
+      flex:1;
+      min-width:250px;
+      background:rgba(255,255,255,0.03);
+      border-radius:12px;
+      padding:25px;
+    }
+    .panel h3 {
+      font-size:1.2rem;
+      color:var(--primary);
+      margin-bottom:10px;
+    }
+    .panel p { color:var(--text-muted); line-height:1.6; }
+    .copyright {
+      text-align:center;
+      color:#6b7280;
+      font-size:0.9rem;
+      border-top:1px solid rgba(255,255,255,0.05);
+      padding-top:20px;
     }
 
-    @media (max-width: 768px) {
-      header h1 { font-size: 3.2rem; }
-      header h2 { font-size: 1.3rem; }
-      .container { padding: 40px 5%; flex-direction: column; }
-      .left, .right { min-width: auto; }
+    @media (max-width:768px){
+      .hero {flex-direction:column;}
+      .hero-text h1{font-size:2.8rem;}
+      .hero-text p{font-size:1rem;}
+      .logo-card{height:70px;}
     }
   </style>
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- Header -->
   <header>
-    <h1>LNX Robotics</h1>
-    <h2>AI & Automation Solutions</h2>
-    <p>Empowering businesses through intelligent automation, precision AI, and modern technology integration.</p>
+    <h1><span>LNX</span> Robotics</h1>
+    <a href="#contact">Liên hệ</a>
   </header>
 
-  <!-- MAIN CONTENT -->
-  <div class="container">
-    <div class="left">
-      <h3>Trình dựng AI & tự động hóa dành cho doanh nghiệp của bạn</h3>
-      <div class="btn-group">
-        <button class="btn">Thử trình dựng</button>
-        <button class="btn">Xem demo</button>
-      </div>
-
-      <div class="card">
-        <h4>Trình kéo-thả</h4>
-        <p>Kéo thả block, xem live preview ngay lập tức.</p>
-      </div>
-
-      <div class="card">
-        <h4>Tùy biến AI</h4>
-        <p>Sinh nội dung, tối ưu SEO, và gợi ý thông minh bằng AI.</p>
-      </div>
-
-      <div class="card">
-        <h4>Hosting & SSL</h4>
-        <p>Xuất bản nhanh với SSL miễn phí.</p>
-      </div>
-
-      <div class="card">
-        <h4>Starter</h4>
-        <p class="price">$0 / tháng</p>
-        <p>Tạo 1 site, giới hạn templates</p>
-      </div>
-
-      <div class="card">
-        <h4>Pro</h4>
-        <p class="price">$15 / tháng</p>
-        <p>Nhiều template, domain, AI tools</p>
-      </div>
-
-      <div class="card">
-        <h4>Business</h4>
-        <p class="price">$49 / tháng</p>
-        <p>Tùy chỉnh nâng cao & SLA</p>
-      </div>
-
-      <div class="testimonial">
-        <div class="testimonial-avatar">NL</div>
-        <div>
-          <strong>Nhat Linh — CTO</strong>
-          <p>“Dễ dùng, chỉnh sửa nhanh — tiết kiệm thời gian cho đội dev.”</p>
-        </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <span>AI • Automation • Robotics</span>
+      <h1>Công nghệ AI đột phá<br>cho hiệu suất tối ưu</h1>
+      <p>Kết hợp trí tuệ nhân tạo tiên tiến với robotics để tự động hóa quy trình, phân tích dữ liệu và thúc đẩy tăng trưởng nhanh tại Việt Nam.</p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary">Khám phá giải pháp</button>
+        <button class="btn btn-outline">Đối tác & tích hợp</button>
       </div>
     </div>
 
-    <div class="right">
-      <h3>Your AI · Your Automation</h3>
-      <p>Mẫu live preview — chỉnh title & subtitle bên dưới để thấy thay đổi ngay.</p>
-      <div class="tag">Automation</div>
-      <div class="tag">E-commerce</div>
-      <div class="tag">Portfolio</div>
-    </div>
-  </div>
-
-  <!-- LOGO SECTION WITH SCROLLING -->
-  <section class="logo-section">
-    <h2>Streamline Coding with AI Precision</h2>
-    <p>Trusted by leading businesses across Vietnam, our AI-integrated solutions streamline operations and enhance productivity, ensuring reliability and innovation for every client.</p>
-
-    <div class="logo-marquee">
-      <div class="logo-track">
-        <div class="logo-card"><img src="https://dummyimage.com/120x40/000/fff&text=LOGO1" alt="Logo 1"></div>
-        <div class="logo-card"><img src="https://dummyimage-of-logo2.png" alt="Logo 2"></div>
-        <div class="logo-card"><img src="https://dummyimage.com/120x40/000/fff&text=LOGO3" alt="Logo 3"></div>
-        <div class="logo-card"><img src="https://dummyimage.com/120x40/000/fff&text=LOGO4" alt="Logo 4"></div>
-        <div class="logo-card"><img src="https://dummyimage.com/120x40/000/fff&text=LOGO5" alt="Logo 5"></div>
-        <div class="logo-card"><img src="https://dummyimage.com/120x40/000/fff&text=LOGO6" alt="Logo 6"></div>
-        <!-- Lặp lại các logo để tạo hiệu ứng liên tục -->
-        <div class="logo-card"><img src="https://dummyimage-of-logo2.png" alt="Logo 2"></div>
-        <div class="logo-card"><img src="https://dummyimage.com/120x40/000/fff&text=LOGO3" alt="Logo 3"></div>
+    <div class="hero-img">
+      <div style="position:relative;">
+        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=80" alt="AI Robotics">
+        <div class="light-sweep"></div>
       </div>
     </div>
   </section>
 
-  <footer>
-    © 2025 LNX Robotics. Thiết kế bởi Nhat Linh — CTO.
+  <!-- Logo Section -->
+  <section class="logo-section">
+    <h2>Đối tác & Công nghệ của LNX Robotics</h2>
+    <p>Kết nối cùng các thương hiệu hàng đầu trong lĩnh vực công nghệ AI, tự động hóa và phân tích dữ liệu để kiến tạo tương lai số.</p>
+    <div class="logo-track">
+      <div class="logo-card"><img src="https://dummyimage.com/160x60/00d4ff/000&text=NVIDIA" alt="Logo 1"></div>
+      <div class="logo-card"><img src="https://dummyimage.com/160x60/00ffa1/000&text=INTEL" alt="Logo 2"></div>
+      <div class="logo-card"><img src="https://dummyimage.com/160x60/00d4ff/000&text=TESLA" alt="Logo 3"></div>
+      <div class="logo-card"><img src="https://dummyimage.com/160x60/00ffa1/000&text=AWS" alt="Logo 4"></div>
+      <div class="logo-card"><img src="https://dummyimage.com/160x60/00d4ff/000&text=OPENAI" alt="Logo 5"></div>
+      <div class="logo-card"><img src="https://dummyimage.com/160x60/00ffa1/000&text=ROBOTICS" alt="Logo 6"></div>
+      <!-- repeat for seamless scroll -->
+      <div class="logo-card"><img src="https://dummyimage.com/160x60/00d4ff/000&text=NVIDIA" alt="Logo 1"></div>
+      <div class="logo-card"><img src="https://dummyimage.com/160x60/00ffa1/000&text=INTEL" alt="Logo 2"></div>
+      <div class="logo-card"><img src="https://dummyimage.com/160x60/00d4ff/000&text=TESLA" alt="Logo 3"></div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <footer id="contact">
+    <div class="contact-grid">
+      <div class="panel">
+        <h3>Văn phòng</h3>
+        <p>Việt Nam, Quận 1, TP. Hồ Chí Minh</p>
+      </div>
+      <div class="panel">
+        <h3>Liên hệ nhanh</h3>
+        <p>Email: <strong>nnhattorinx2@gmail.com</strong><br>
+           Phone: <strong>+84 704107623</strong></p>
+      </div>
+      <div class="panel">
+        <h3>Giờ làm việc</h3>
+        <p>Thứ 2 – Thứ 6: 9:00 – 17:00</p>
+      </div>
+    </div>
+    <div class="copyright">© 2025 LNX Robotics. Thiết kế bởi Nhat Linh — CTO.</div>
   </footer>
 
 </body>
 </html>
-
